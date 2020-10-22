@@ -24,6 +24,7 @@ function App() {
   return (
     <div>
       <h1>Bienvenue sur l'application Bloc-Notes</h1>
+      <h4>(Notre équipe s'occupera du CSS ce week-end, promis ! :D )</h4>
       <div>
         <NoteDisplay input={input} />
       </div>

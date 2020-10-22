@@ -12,7 +12,7 @@ export const MarkdownInput = (props) => {
         <textarea rows="10" name='content' onChange={props.onChange} />
       </div>
       <div>
-        <input type="submit" value="Sauvegarder" onClick={props.onClick} />
+        <input type="submit" value="Sauvegarder la note" onClick={props.onClick} />
       </div>
     </form>
   );
