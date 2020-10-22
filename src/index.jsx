@@ -17,10 +17,10 @@ function App() {
     <div>
       <h1>Bienvenue sur l'application Bloc-Notes</h1>
       <div>
-        NoteDisplay : {input.answer1}
+        NoteDisplay : {input.title}
       </div>
       <div>
-        <MarkdownInput onChange={e => handleInputChange(e)} />
+        <MarkdownInput input={input} onChange={handleInputChange} />
       </div>
     </div>
   );

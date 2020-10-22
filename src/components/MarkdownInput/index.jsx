@@ -5,12 +5,12 @@ export const MarkdownInput = (props) => {
   return (
     <form>
       <div>
-        <label>Answer:</label>
-        <input type="text" name='answer1' onChange={e => props.onChange(e)} />
+        <label>Titre :</label>
+        <input type="text" name='title' onChange={props.onChange} />
       </div>
       <div>
-        <label>Answer 2:</label>
-        <input type="text" name='answer2' onChange={e => props.onChange(e)} />
+        <label>Note :</label>
+        <textarea rows="10" name='content' onChange={props.onChange} />
       </div>
     </form>
   )
