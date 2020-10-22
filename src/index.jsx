@@ -4,7 +4,12 @@ import { MarkdownInput } from 'components/MarkdownInput';
 import 'index.css';
 
 function App() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState({});
+
+  const handleInputChange = (e) => setInput({
+    ...input,
+    [e.currentTarget.name]: e.currentTarget.value
+  });
 
   console.log(input);
 
@@ -12,10 +17,10 @@ function App() {
     <div>
       <h1>Bienvenue sur l'application Bloc-Notes</h1>
       <div>
-        NoteDisplay : {input}
+        NoteDisplay : {input.answer1}
       </div>
       <div>
-        <MarkdownInput onChange={value => setInput(value)} />
+        <MarkdownInput onChange={e => handleInputChange(e)} />
       </div>
     </div>
   );
