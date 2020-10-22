@@ -11,6 +11,9 @@ export const MarkdownInput = (props) => {
         <label>Note :</label>
         <textarea rows="10" name='content' onChange={props.onChange} />
       </div>
+      <div>
+        <input type="submit" value="Sauvegarder" onClick={props.onClick} />
+      </div>
     </form>
   );
 }

@@ -12,6 +12,12 @@ function App() {
     [e.currentTarget.name]: e.currentTarget.value
   });
 
+  const save = (e) => {
+    e.preventDefault();
+    localStorage.setItem('note', JSON.stringify(input));
+    console.log(localStorage);
+  }
+
   console.log(input);
 
   return (
@@ -21,7 +27,7 @@ function App() {
         <NoteDisplay input={input} />
       </div>
       <div>
-        <MarkdownInput onChange={handleInputChange} />
+        <MarkdownInput onChange={handleInputChange} onClick={save} />
       </div>
     </div>
   );
