@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const MarkdownInput = (props) => {
-
   return (
     <form>
       <div>
@@ -13,5 +12,5 @@ export const MarkdownInput = (props) => {
         <textarea rows="10" name='content' onChange={props.onChange} />
       </div>
     </form>
-  )
+  );
 }

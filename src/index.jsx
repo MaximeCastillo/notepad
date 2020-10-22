@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { MarkdownInput } from 'components/MarkdownInput';
 import 'index.css';
+import { NoteDisplay } from './components/MarkdownInput/NoteDisplay';
 
 function App() {
   const [input, setInput] = useState({});
@@ -17,10 +18,10 @@ function App() {
     <div>
       <h1>Bienvenue sur l'application Bloc-Notes</h1>
       <div>
-        NoteDisplay : {input.title}
+        <NoteDisplay input={input} />
       </div>
       <div>
-        <MarkdownInput input={input} onChange={handleInputChange} />
+        <MarkdownInput onChange={handleInputChange} />
       </div>
     </div>
   );
