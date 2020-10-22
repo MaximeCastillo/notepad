@@ -18,7 +18,8 @@ function App() {
     console.log(localStorage);
   }
 
-  console.log(input);
+  const maSauvegarde = localStorage.getItem('note');
+  const maNote = JSON.parse(maSauvegarde);
 
   return (
     <div>
@@ -28,6 +29,10 @@ function App() {
       </div>
       <div>
         <MarkdownInput onChange={handleInputChange} onClick={save} />
+      </div>
+      <h3>Note enregistrée :</h3>
+      <div>
+        <NoteDisplay input={maNote} />
       </div>
     </div>
   );
