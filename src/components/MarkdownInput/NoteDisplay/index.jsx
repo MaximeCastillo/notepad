@@ -3,13 +3,17 @@ import Showdown from 'showdown';
 
 
 export const NoteDisplay = (props) => {
-  const input = props.input;
   const converter = new Showdown.Converter();
+
+  const input = props.input;
+
+  const HTMLTitle = converter.makeHtml(input.title);
+  const HTMLContent = converter.makeHtml(input.content);
 
   return (
     <div>
-      <h4>{input.title}</h4>
-      <p>{input.content}</p>
+      <p dangerouslySetInnerHTML={{__html: HTMLTitle}} />
+      <p dangerouslySetInnerHTML={{__html: HTMLContent}} />
     </div>
   );
 }
