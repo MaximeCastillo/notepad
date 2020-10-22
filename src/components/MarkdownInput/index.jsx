@@ -1,25 +1,15 @@
-import React, { useState} from 'react';
+import React from 'react';
 
-export const MarkdownInput = () => {
-  const [input, setInput] = useState({});
-
-  const handleInputChange = (e) => {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value
-    });
-    console.log(input);
-  };
-
+export const MarkdownInput = (props) => {
   return (
     <form>
       <div>
         <label>Answer:</label>
-        <input type="text" value={input.answer1} name='answer1' onChange={handleInputChange} />
+        <input type="text" name='answer1' onChange={e => props.onChange(e.target.value)} />
       </div>
       <div>
         <label>Answer 2:</label>
-        <input type="text" value={input.anwser2} name='answer2' onChange={handleInputChange} />
+        <input type="text" name='answer2' onChange={e => props.onChange(e.target.value)} />
       </div>
     </form>
   )

@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import { MarkdownInput } from 'components/MarkdownInput';
 import 'index.css';
 
-class App extends React.Component {
-  render() {
-    return (
+function App() {
+  const [input, setInput] = useState('');
+
+  console.log(input);
+
+  return (
+    <div>
+      <h1>Bienvenue sur l'application Bloc-Notes</h1>
       <div>
-        <h1>Bienvenue sur l'application Bloc-Notes</h1>
-        <div>
-          NoteDisplay
-        </div>
-        <div>
-          <MarkdownInput />
-        </div>
+        NoteDisplay : {input}
       </div>
-    );
-  }
+      <div>
+        <MarkdownInput onChange={value => setInput(value)} />
+      </div>
+    </div>
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
