@@ -3,6 +3,10 @@ import Showdown from 'showdown';
 
 
 export const NoteDisplay = (props) => {
+  if (!props.input) {
+    return null;
+  }
+
   const converter = new Showdown.Converter();
 
   const input = props.input;
