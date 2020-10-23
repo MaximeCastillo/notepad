@@ -2,17 +2,17 @@ import React from 'react';
 import Showdown from 'showdown';
 
 
-export const NoteDisplay = (props) => {
-  if (!props.input) {
+export const NoteDisplay = ({ input }) => {
+  if (!input) {
     return null;
   }
 
   const converter = new Showdown.Converter();
 
-  const input = props.input;
+  const data = input;
 
-  const HTMLTitle = converter.makeHtml(input.title);
-  const HTMLContent = converter.makeHtml(input.content);
+  const HTMLTitle = converter.makeHtml(data.title);
+  const HTMLContent = converter.makeHtml(data.content);
 
   return (
     <div>
