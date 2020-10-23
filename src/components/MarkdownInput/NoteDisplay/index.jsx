@@ -1,13 +1,12 @@
 import React from 'react';
 import Showdown from 'showdown';
 
+const converter = new Showdown.Converter();
 
 export const NoteDisplay = ({ input }) => {
   if (!input) {
     return null;
   }
-
-  const converter = new Showdown.Converter();
 
   const data = input;
 
